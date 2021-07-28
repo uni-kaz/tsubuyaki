@@ -45,4 +45,14 @@ public class TsubuyakiService {
         found.forEach(list::add);
         return list;
     }
+
+    /**
+     * キーワードでつぶやきを検索する
+     * 
+     * @param word
+     * @return
+     */
+    public List<Tsubuyaki> searchTsubuyaki(String word) {
+        return repo.findByCommentContaining(word);
+    }
 }
