@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>みんなのつぶやき</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
 <body>
@@ -20,6 +21,12 @@
         <label for="comment">つぶやき：</label>
         <input type="text" required th:field="*{comment}" />
         <input type="submit" value="つぶやく" />
+    </form>
+    <h2>検索する</h2>
+    <form th:action="@{/search}" method="get">
+        <label for="keyword">キーワード：</label>
+        <input type="text" required id="keyword" name="keyword">
+        <input type="submit" value="検索する">
     </form>
     <h2>タイトルへ</h2>
     <a th:href="@{/}">戻る</a>
